@@ -4,7 +4,6 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   lessLoaderOptions: {
-    strictMath: true,
   },
 }
 
