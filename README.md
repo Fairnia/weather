@@ -41,3 +41,5 @@ Null Island = 0.0000° N, 0.000° W
 Toronto = 43.6532° N, 79.3832° W
 North Pole = 95.0000 N, 135.0000 W
 
+temp font: https://fonts.google.com/specimen/Teko
+Text font: https://fonts.google.com/specimen/Montserrat

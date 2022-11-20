@@ -1,10 +1,125 @@
+main {
+    max-width: 605px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    font-weight: 100;
+    align-items: center;
+}
+
+main * {
+    font-weight: 100;
+}
+
 nav {
     border: 1px solid white;
     display: flex;
-    justify-content: center;
+    color: red;
+    height: 90px;
+    text-transform: uppercase;
+
+    .active {
+        color: #5fb0e8;
+        font-weight: 600;
+    }
 }
 
 nav .navItem {
-    padding: 20px;
-    font-size: 22px;
+
+    font-size: 18px;
+}
+
+.weatherResults {
+    border: 3px solid white;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 0px 16px 37px -18px rgba(77, 73, 73, 0.75);
+}
+
+.weatherTodayContainer {
+    padding: 15px;
+    border-bottom: 3px solid white;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    flex-direction: column;
+    height: 240px;
+
+    img {
+        object-fit: contain;
+    }
+}
+
+.weatherTodayTitle {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 18px 0 35px;
+}
+
+.weatherTodayDescription {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.weatherTodayContent {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.temp {
+    font-family: teko, sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+    padding-top: 0;
+}
+
+.tempLarge {
+    font-size: 4.5rem;
+    line-height: 3.3rem;
+}
+
+.tempSmall {
+    margin-top: 14px;
+}
+
+
+
+.futureWeatherContainer {
+    display: flex;
+    justify-content: center;
+
+    h3 {
+        padding: 10px 0;
+        margin: 0;
+    }
+
+    img {
+        max-width: 75px;
+        height: auto;
+    }
+
+}
+
+.futureWeather+.futureWeather {
+    border-left: 3px solid white;
+}
+
+.futureWeather {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    // min-width: 250px;
+    // border: 3px solid white;
+}
+
+.futureWeather>* {
+    // border: 1px solid red;
 }
