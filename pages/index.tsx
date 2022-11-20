@@ -4,12 +4,7 @@ import React, { Component } from 'react';
 import SmallerCard from '../components/smallerCard';
 import MainCard from '../components/mainCard';
 import { WeatherData } from '../lib/types';
-import dayjs from 'dayjs'
 import locations from '../lib/locations';
-
-const customParseFormat = require('dayjs/plugin/customParseFormat')
-dayjs.extend(customParseFormat)
-
 interface State {
   currentCity: string;
   weatherData: WeatherData[];
