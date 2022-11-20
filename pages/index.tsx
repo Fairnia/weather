@@ -1,8 +1,8 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head'
 import React, { Component } from 'react';
-import SmallerCard from '../components/smallerCard';
-import MainCard from '../components/mainCard';
+import FutureWeather from '../components/futureWeather';
+import TodaysWeather from '../components/todaysWeather';
 import { WeatherData } from '../lib/types';
 import locations from '../lib/locations';
 interface State {
@@ -83,7 +83,7 @@ class Home extends Component<AppProps, State> {
                 </nav>
 
                 {!this.state.isError && <div className='weatherResults'>
-                  <MainCard
+                  <TodaysWeather
                     icon={todaysWeather?.weatherImg}
                     altText={`${todaysWeather?.weatherDescription} Icon`}
                     temp={todaysWeather?.temperature}
@@ -92,7 +92,7 @@ class Home extends Component<AppProps, State> {
                   <div className='futureWeatherContainer'>
                     {this.state.weatherData.slice(1).map((weatherData, index) => {
                       return (
-                        <SmallerCard
+                        <FutureWeather
                           day={weatherData.day}
                           icon={weatherData.weatherImg}
                           altText={`${todaysWeather.weatherDescription} Icon`}

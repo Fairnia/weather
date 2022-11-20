@@ -7,7 +7,7 @@ interface Props {
     description: string;
 }
 
-class MainCard extends Component<Props> {
+class TodaysWeather extends Component<Props> {
     render() {
         return (
             <div className='weatherTodayContainer'>
@@ -23,13 +23,9 @@ class MainCard extends Component<Props> {
                         </div>
                     </div>
                 </div>
-
-                <style jsx>{`
-                  
-                `}</style>
             </div>
         )
     }
 }
 
-export default MainCard;
+export default TodaysWeather;

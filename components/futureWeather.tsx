@@ -7,7 +7,7 @@ interface Props {
     temp: string;
 }
 
-export default class SmallerCard extends Component<Props> {
+export default class FutureWeather extends Component<Props> {
     render() {
         return (
             <div className='futureWeather'>
