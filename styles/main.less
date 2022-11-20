@@ -13,21 +13,31 @@ main * {
 }
 
 nav {
-    border: 1px solid white;
     display: flex;
-    color: red;
     height: 90px;
     text-transform: uppercase;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+
+}
+
+nav .navItem {
+    font-size: 24px;
+    width: 33%;
+    text-align: center;
+
+    &:hover,
+    &:focus,
+    &:active {
+        font-weight: 400;
+        cursor: pointer;
+    }
 
     .active {
         color: #5fb0e8;
         font-weight: 600;
     }
-}
-
-nav .navItem {
-
-    font-size: 18px;
 }
 
 .weatherResults {
