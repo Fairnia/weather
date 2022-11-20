@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { transform } from '../../lib/transform'
-// import fixture from '../../lib/fixtures'
 import { WeatherData } from '../../lib/types'
 
 const weatherAPIKey = process.env.WEATHER_API_KEY
@@ -35,7 +34,6 @@ export default async function handler(
       }
     }
     const weatherData = await response.json();
-    // const weatherData = fixture
     const weatherDataTimelines = weatherData.data.timelines;
     const transformedWeatherData = await transform(weatherDataTimelines)
     console.log("transformedWeatherData ", transformedWeatherData)
