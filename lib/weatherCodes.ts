@@ -1,4 +1,4 @@
-const WeatherCodes = {
+const WeatherCodes: { [key: string]: string } = {
     "0": "Unknown",
     "1000": "Clear, Sunny",
     "1100": "Mostly Clear",
