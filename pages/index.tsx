@@ -14,6 +14,7 @@ interface State {
   currentCity: string;
   weatherData: WeatherData[];
   isError: boolean;
+  errorMessage: string;
 }
 
 class Home extends Component<AppProps, State> {
@@ -21,6 +22,7 @@ class Home extends Component<AppProps, State> {
     currentCity: locations[0].id,
     weatherData: [],
     isError: false,
+    errorMessage: "",
   }
 
   async updateWeatherData(): Promise<void> {
@@ -30,11 +32,14 @@ class Home extends Component<AppProps, State> {
     this.setState({ weatherData: [] })
     try {
       const response = await fetch(`/api/weather?lat=${cityData?.coordinates.lat}&long=${cityData?.coordinates.long}`);
+      const body = await response.json();
 
       if (!response.ok) {
-        this.setState({ isError: true })
+        this.setState({
+          errorMessage: body.message,
+          isError: true
+        })
       } else {
-        const body = await response.json();
         this.setState({ weatherData: body })
       }
     } catch (error) {
@@ -60,7 +65,7 @@ class Home extends Component<AppProps, State> {
         <main className="mainContainer">
           {/* because this nav is specifically for this page, I have inserted it inside the main div */}
           {
-            this.state.weatherData.length === 0 ?
+            (this.state.weatherData.length === 0 && !this.state.isError) ?
               <div className='loading'>
                 <img src="/loading.gif" alt="Loading indicator" width='75' height='75' />
               </div>
@@ -104,7 +109,7 @@ class Home extends Component<AppProps, State> {
                   </div>
                 </div>}
                 {this.state.isError && <div className='weatherResults errored'>
-                  An error happened, please try again
+                  {this.state.errorMessage}
                 </div>}
               </>
           }

@@ -18,14 +18,23 @@ export default async function handler(
   } = req
 
   try {
-    const data = await fetch(`https://api.tomorrow.io/v4/timelines?location=${lat},${long}&apikey=${weatherAPIKey}&timesteps=1d&fields=temperature,weatherCode&units=metric`, {
+    const response = await fetch(`https://api.tomorrow.io/v4/timelines?location=${lat},${long}&apikey=${weatherAPIKey}&timesteps=1d&fields=temperature,weatherCode&units=metric`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         'Accept-Encoding': 'deflate'
       },
     })
-    const weatherData = await data.json();
+    if (!response.ok) {
+      if (response.status === 429) {
+        return res.status(429).json({
+          message: "Unfortunately this application has been rate limited by the tomorrow.io, please try again soon"
+        });
+      } else {
+        throw new Error('Could not fetch data from tomorrow.io.')
+      }
+    }
+    const weatherData = await response.json();
     // const weatherData = fixture
     const weatherDataTimelines = weatherData.data.timelines;
     const transformedWeatherData = await transform(weatherDataTimelines)
