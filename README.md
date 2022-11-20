@@ -43,3 +43,14 @@ North Pole = 95.0000 N, 135.0000 W
 
 temp font: https://fonts.google.com/specimen/Teko
 Text font: https://fonts.google.com/specimen/Montserrat
+
+- authentication to the backend
+- error handling could have been more granular
+- css refactoring
+- fallback img
+- find a main img with better resolution
+- make it a next img
+- cache entries in case of rate limiting
+- validate date order
+- testing
+- update the favicon
