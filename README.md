@@ -32,3 +32,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
+Lat Longs 
+Vancouver = 49.2827° N, 123.1207° W
+Null Island = 0.0000° N, 0.000° W
+Toronto = 43.6532° N, 79.3832° W
+North Pole = 95.0000 N, 135.0000 W
+
+temp font: https://fonts.google.com/specimen/Teko
+Text font: https://fonts.google.com/specimen/Montserrat
