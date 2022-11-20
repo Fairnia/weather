@@ -9,12 +9,19 @@ main {
     margin: 0 auto;
     font-weight: 100;
     align-items: center;
-
-
 }
 
 main * {
     font-weight: 100;
+}
+
+.loading {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 nav {
@@ -38,7 +45,7 @@ nav .navItem {
         cursor: pointer;
     }
 
-    .active {
+    &.active {
         color: #5fb0e8;
         font-weight: 600;
     }
@@ -105,6 +112,21 @@ nav .navItem {
 .tempSmall {
     margin-top: 14px;
 }
+
+.weatherTodayImgContainer {
+    min-width: 135px;
+    display: flex;
+    justify-content: center;
+
+    img {
+        height: 80px;
+    }
+
+    .description {
+        font-size: 1.5rem;
+    }
+}
+
 
 
 
