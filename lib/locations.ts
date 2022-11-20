@@ -10,11 +10,11 @@ const locations: Location[] = [
         }
     },
     {
-        id: 'losAngeles',
-        name: 'Los Angeles',
+        id: 'vancouver',
+        name: 'Vancouver',
         coordinates: {
-            lat: '34.0522',
-            long: '-118.2437'
+            lat: '49.2577143',
+            long: '-123.1939434'
         }
     },
     {
