@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 
-class MainCard extends Component {
+interface Props {
+    icon: string;
+    altText: string;
+    temp: string;
+    description: string;
+}
+
+class MainCard extends Component<Props> {
     render() {
         return (
             <div className='weatherTodayContainer'>
@@ -8,33 +15,17 @@ class MainCard extends Component {
                     <h2 className='weatherTodayTitle'>Today</h2>
                     <div className='weatherTodayContent'>
                         <div className="weatherTodayImgContainer">
-                            <img src="/assets/weatherIcons/10000.png" alt="Sunny Icon" />
+                            <img src={this.props.icon} alt={this.props.altText} />
                         </div>
                         <div className='weatherTodayDescription'>
-                            <span className="temp tempLarge">19°</span>
-                            <span className="description">Sunny</span>
+                            <span className="temp tempLarge">{this.props.temp}°</span>
+                            <span className="description">{this.props.description}</span>
                         </div>
                     </div>
                 </div>
 
                 <style jsx>{`
-                    .weatherTodayImgContainer{
-                        min-width: 135px;
-                        display: flex;
-                        justify-content: center;
-                    }
-
-                    img {
-                        height: 80px;
-                    }
-
-                    .description{
-                        font-size:1.5rem;
-                    }
-
-                    .weatherToday{
-
-                    }
+                  
                 `}</style>
             </div>
         )
