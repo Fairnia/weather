@@ -54,3 +54,4 @@ Text font: https://fonts.google.com/specimen/Montserrat
 - validate date order
 - testing
 - update the favicon
+- update images with night time option
