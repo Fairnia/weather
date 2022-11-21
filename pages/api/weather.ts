@@ -27,7 +27,7 @@ export default async function handler(
     if (!response.ok) {
       if (response.status === 429) {
         return res.status(429).json({
-          message: "Unfortunately this application has been rate limited by the tomorrow.io, please try again soon"
+          message: "Sorry this site has been rate limited by tomorrow.io, please try again soon"
         });
       } else {
         throw new Error('Could not fetch data from tomorrow.io.')
